@@ -1,0 +1,53 @@
+import pandas as pd
+df= pd.read_csv("IPL Matches 2008-2020.csv")
+
+#head
+df.head()
+
+#is null
+print("IS NULL \n",df.isnull())
+
+#is null any
+print("\nIS NULL ANY() \n",df.isnull().any())
+
+#is null any
+print("\nIS NULL ANY() \n",df.isnull().any())
+
+#is null any
+print("\nIS NULL ANY() \n",df.isnull().any())
+
+#is null sum
+print("\nIS NULL SUM() \n",df.isnull().sum())
+
+#info
+print("\nINFO \n",df.info())
+
+#describe
+print("\nDESCRIBE \n",df.describe())
+
+#shape
+print("\nshape\n ",df.shape)
+
+#to delete row
+print(df.drop([5],axis=0))
+
+#to delete column
+print(df.drop(columns=["city"],axis=1))
+
+#to calculate the mean value
+mean_value=df['neutral_venue'].mean()
+print(mean_value)
+
+#to fill the mean value in the null space
+df['neutral_venue'].fillna(mean_value,inplace=True)
+print(df['neutral_venue'])
+
+#to change the column name
+df.rename(columns = { 'winner' : 'team_won'},inplace=True)
+print("HEAD\n",df.head())
+
+#slicing
+print(df[0:5]) #it prints(0-4)
+
+#slicing
+print(df[0:5]) #it prints(0-4)
